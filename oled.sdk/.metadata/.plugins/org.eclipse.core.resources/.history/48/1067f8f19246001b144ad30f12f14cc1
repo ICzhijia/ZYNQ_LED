@@ -1,0 +1,126 @@
+
+#include <stdio.h>
+#include "platform.h"
+
+
+
+#include "xgpiops.h"
+#include "xgpiops_hw.h"
+
+#include "XSCUGIC.H"
+#include "XSCUGIC_HW.H"
+
+
+
+#define ICCPMR   *(volatile unsigned int *) 0xf8f00104
+//printf(" ICCPMR = %0X  @ line = %d \n", ICCPMR ,__LINE__  );
+//(__FILE__, __LINE__);
+
+#define GPIO_NO 50
+
+static void GpioHandler(void *CallBackRef, int Bank, u32 Status)
+{
+
+	static int  i = 0;
+//BANK0-3
+
+//BANK0   31 ... 0
+//BANK1     53,52，51，50，49...32        BIT 18
+// STATUS  1 表示中断
+// 	if (Status ==0 ) return ;
+
+    XGpioPs* pGpioPs=(XGpioPs*)CallBackRef;
+
+    XGpioPs_IntrDisablePin(pGpioPs,GPIO_NO);
+
+    printf("Gpio Handler %d...   BANK = %d  STATUS = %X \n\r",i++,Bank,Status );
+
+  //  while (1 == XGpioPs_ReadPin( pGpioPs  ,  GPIO_NO )) ;
+
+    usleep(100*1000) ;
+
+    XGpioPs_IntrClearPin(pGpioPs,GPIO_NO);
+
+    XGpioPs_IntrEnablePin(pGpioPs,GPIO_NO);
+
+}
+
+int main()
+
+{
+
+    u32 data;
+
+    XGpioPs Gpio;
+
+    XGpioPs_Config *ConfigPtr;
+
+
+
+
+//    //GPIO的配置
+//    ConfigPtr = XGpioPs_LookupConfig(0);
+//    XGpioPs_CfgInitialize(&Gpio, ConfigPtr, ConfigPtr->BaseAddr);
+//    XGpioPs_SetDirectionPin(&Gpio,7,0x1);
+//    XGpioPs_SetOutputEnablePin(&Gpio,7,0x1);
+//    XGpioPs_WritePin(&Gpio, 7, 0x00);
+
+
+
+
+
+    ConfigPtr = XGpioPs_LookupConfig(0);
+     XGpioPs_CfgInitialize(&Gpio, ConfigPtr, ConfigPtr->BaseAddr);
+ //初始化GPIO的输入以及中断。
+
+    XGpioPs_SetDirectionPin(&Gpio,GPIO_NO,0x0);
+ //    XGpioPs_SetOutputEnablePin(&Gpio,50,0x1);
+
+     XGpioPs_SetIntrTypePin(&Gpio,GPIO_NO,XGPIOPS_IRQ_TYPE_EDGE_RISING);
+     XGpioPs_SetCallbackHandler(&Gpio, (void *)&Gpio, GpioHandler);
+     XGpioPs_IntrEnablePin(&Gpio,GPIO_NO);
+
+
+     XScuGic ScuGic;
+     XScuGic_Config* pScuGicCfg;
+     pScuGicCfg=XScuGic_LookupConfig(XPAR_SCUGIC_SINGLE_DEVICE_ID);
+     XScuGic_CfgInitialize(&ScuGic,pScuGicCfg,pScuGicCfg->CpuBaseAddress);
+
+     XScuGic_Connect(&ScuGic, 52,
+                    (Xil_ExceptionHandler)XGpioPs_IntrHandler,
+                    (void *)&Gpio);
+
+     XScuGic_SetPriorityTriggerType(&ScuGic,52,0xA0,0x01);//CPU0     bit0=1
+     XScuGic_Enable(&ScuGic,52);
+
+     Xil_ExceptionInit();
+     Xil_ExceptionRegisterHandler(XIL_EXCEPTION_ID_INT,(Xil_ExceptionHandler)XScuGic_InterruptHandler,&ScuGic);
+     Xil_ExceptionEnable();
+
+    printf("Intr test: \n\r");
+
+    while(1)
+    {
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

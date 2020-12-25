@@ -1,0 +1,109 @@
+
+
+#include <stdio.h>
+//#include "platform.h"
+
+
+
+#include "xgpiops.h"
+#include "xgpiops_hw.h"
+#include "xil_io.h"
+
+
+#include "XSCUGIC.H"
+#include "XSCUGIC_HW.H"
+
+
+static XGpioPs Gpio;
+
+
+static void GpioHandler(void *CallBackRef, int Bank, u32 Status)
+{
+
+
+
+    XGpioPs* pGpioPs=(XGpioPs*)CallBackRef;
+
+    XGpioPs_IntrDisablePin(pGpioPs,12);
+
+    XGpioPs_WritePin(&Gpio, 7, 0x01);
+//    sleep(1);
+//    XGpioPs_WritePin(&Gpio, 7, 0x00);
+
+
+    XGpioPs_IntrEnablePin(pGpioPs,12);
+
+    XGpioPs_IntrClearPin(pGpioPs,12);
+
+}
+
+int main()
+
+{
+     u32 data;
+
+
+     XGpioPs_Config *ConfigPtr;
+
+     XScuGic ScuGic;
+     XScuGic_Config* pScuGicCfg1;
+
+     //GPIOµÄÅäÖÃ
+     ConfigPtr = XGpioPs_LookupConfig(0);
+     XGpioPs_CfgInitialize(&Gpio, ConfigPtr, ConfigPtr->BaseAddr);
+     XGpioPs_SetDirectionPin(&Gpio,7,0x1);
+     XGpioPs_SetOutputEnablePin(&Gpio,7,0x1);
+     XGpioPs_WritePin(&Gpio, 7, 0x00);
+
+     XGpioPs_SetDirectionPin(&Gpio,12,0x0);
+
+     XGpioPs_SetIntrTypePin(&Gpio,12,XGPIOPS_IRQ_TYPE_EDGE_RISING);
+     XGpioPs_SetCallbackHandler(&Gpio, (void *)&Gpio, GpioHandler);
+     XGpioPs_IntrEnablePin(&Gpio,12);
+
+
+     //GICµÄÅäÖÃ
+     pScuGicCfg1= XScuGic_LookupConfig(0);
+     XScuGic_CfgInitialize(&ScuGic,pScuGicCfg1,pScuGicCfg1->CpuBaseAddress);
+
+     XScuGic_Connect(&ScuGic, 12,(Xil_ExceptionHandler)XGpioPs_IntrHandler,(void *)&Gpio);
+
+     Xil_ExceptionInit();
+     Xil_ExceptionRegisterHandler(XIL_EXCEPTION_ID_INT,(Xil_ExceptionHandler)XGpioPs_IntrHandler,&ScuGic);
+     Xil_ExceptionEnable();
+
+    while(1)
+    {
+
+
+    }
+
+}
+
+
+
+
+///http://www.cnblogs.com/dragen/archive/2013/06/15/3138134.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,44 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Thu Dec 17 15:07:27 2020
+# Process ID: 3768
+# Current directory: C:/Users/aiai/Desktop/study/FPGA/Xlinx/2020_12_5/oled_test/oled
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7288 C:\Users\aiai\Desktop\study\FPGA\Xlinx\2020_12_5\oled_test\oled\oled.xpr
+# Log file: C:/Users/aiai/Desktop/study/FPGA/Xlinx/2020_12_5/oled_test/oled/vivado.log
+# Journal file: C:/Users/aiai/Desktop/study/FPGA/Xlinx/2020_12_5/oled_test/oled\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/aiai/Desktop/study/FPGA/Xlinx/2020_12_5/oled_test/oled/oled.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/aiai/Desktop/study/FPGA/Xlinx/2020_12_5/OLED/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Vivado/install/Vivado/2019.1/data/ip'.
+open_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:06 . Memory (MB): peak = 732.559 ; gain = 93.406
+update_compile_order -fileset sources_1
+open_bd_design {C:/Users/aiai/Desktop/study/FPGA/Xlinx/2020_12_5/oled_test/oled/oled.srcs/sources_1/bd/design_1/design_1.bd}
+Adding component instance block -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+Adding component instance block -- xilinx.com:ip:axi_interconnect:2.1 - ps7_0_axi_periph
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - rst_ps7_0_50M
+Adding component instance block -- xilinx.com:user:LED:1.0 - LED_0
+Successfully read diagram <design_1> from BD file <C:/Users/aiai/Desktop/study/FPGA/Xlinx/2020_12_5/oled_test/oled/oled.srcs/sources_1/bd/design_1/design_1.bd>
+open_bd_design: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 899.727 ; gain = 31.980
+ipx::edit_ip_in_project -upgrade true -name LED_v1_0_project -directory C:/Users/aiai/Desktop/study/FPGA/Xlinx/2020_12_5/oled_test/oled/oled.tmp/LED_v1_0_project c:/Users/aiai/Desktop/study/FPGA/Xlinx/2020_12_5/OLED/ip_repo/LED_1.0/component.xml
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'c:/users/aiai/desktop/study/fpga/xlinx/2020_12_5/oled_test/oled/oled.tmp/led_v1_0_project'
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Vivado/install/Vivado/2019.1/data/ip'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/aiai/Desktop/study/FPGA/Xlinx/2020_12_5/OLED/ip_repo'.
+INFO: [IP_Flow 19-795] Syncing license key meta-data
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [c:/Users/aiai/Desktop/study/FPGA/Xlinx/2020_12_5/OLED/ip_repo/LED_1.0/hdl/LED_v1_0_S0_AXI.v:]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [c:/Users/aiai/Desktop/study/FPGA/Xlinx/2020_12_5/OLED/ip_repo/LED_1.0/hdl/LED_v1_0.v:]
+ipx::edit_ip_in_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 902.395 ; gain = 0.000
+update_compile_order -fileset sources_1
+close_project
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Dec 17 16:27:32 2020...

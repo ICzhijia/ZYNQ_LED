@@ -1,0 +1,105 @@
+
+
+#include <stdio.h>
+//#include "platform.h"
+
+
+
+#include "xgpiops.h"
+#include "xgpiops_hw.h"
+#include "xil_io.h"
+
+
+
+#include "XSCUGIC.H"
+#include "XSCUGIC_HW.H"
+
+
+
+#define ICCPMR   *(volatile unsigned int *) 0xf8f00104
+//printf(" ICCPMR = %0X  @ line = %d \n", ICCPMR ,__LINE__  );
+//(__FILE__, __LINE__);
+
+#define GPIO_NO 50
+
+static void GpioHandler(void *CallBackRef, int Bank, u32 Status)
+{
+
+	static int  i = 0;
+
+	if (Status ==0 ) return ;
+    XGpioPs* pGpioPs=(XGpioPs*)CallBackRef;
+
+    XGpioPs_IntrDisablePin(pGpioPs,GPIO_NO);
+
+    printf("Gpio Handler %d...\n\r",i++);
+
+
+
+    XGpioPs_IntrEnablePin(pGpioPs,GPIO_NO);
+
+    XGpioPs_IntrClearPin(pGpioPs,GPIO_NO);
+
+}
+
+int main()
+
+{
+     u32 data;
+
+     static XGpioPs Gpio;
+     XGpioPs_Config *ConfigPtr;
+
+     XScuGic ScuGic;
+     XScuGic_Config* pScuGicCfg1;
+
+     //GPIOµƒ≈‰÷√
+     ConfigPtr = XGpioPs_LookupConfig(0);
+     XGpioPs_CfgInitialize(&Gpio, ConfigPtr, ConfigPtr->BaseAddr);
+     XGpioPs_SetDirectionPin(&Gpio,7,0x1);
+     XGpioPs_SetOutputEnablePin(&Gpio,7,0x1);
+     XGpioPs_WritePin(&Gpio, 7, 0x01);
+
+     XGpioPs_SetDirectionPin(&Gpio,12,0x0);
+
+     //GICµƒ≈‰÷√
+     pScuGicCfg1= XScuGic_LookupConfig(0);
+     XScuGic_CfgInitialize(&XScuGic,pScuGicCfg1,0);
+
+
+
+    while(1)
+    {
+         if( XGpioPs_ReadPin(&Gpio, 12)==1) XGpioPs_WritePin(&Gpio, 7, 0x01);
+         else  XGpioPs_WritePin(&Gpio, 7, 0x00);
+    }
+
+}
+
+
+
+
+///http://www.cnblogs.com/dragen/archive/2013/06/15/3138134.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,805 @@
+/*
+
+Xilinx Vivado v2019.1 (64-bit) [Major: 2019, Minor: 1]
+SW Build: 2552052 on Fri May 24 14:49:42 MDT 2019
+IP Build: 2548770 on Fri May 24 18:01:18 MDT 2019
+
+Process ID (PID): 16024
+License: Customer
+
+Current time: 	Sun Dec 20 16:26:57 CST 2020
+Time zone: 	China Standard Time (Asia/Shanghai)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 12
+
+Screen size: 1920x1080
+Screen resolution (DPI): 125
+Available screens: 2
+Available disk space: 17 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=15
+
+Java version: 	9.0.4 64-bit
+Java home: 	D:/Vivado/install/Vivado/2019.1/tps/win64/jre9.0.4
+Java executable location: 	D:/Vivado/install/Vivado/2019.1/tps/win64/jre9.0.4/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	aiai
+User home directory: C:/Users/aiai
+User working directory: C:/Users/aiai/Desktop/study/FPGA/Xlinx/2020_12_5/oled_test/oled
+User country: 	CN
+User language: 	zh
+User locale: 	zh_CN
+
+RDI_BASEROOT: D:/Vivado/install/Vivado
+HDI_APPROOT: D:/Vivado/install/Vivado/2019.1
+RDI_DATADIR: D:/Vivado/install/Vivado/2019.1/data
+RDI_BINDIR: D:/Vivado/install/Vivado/2019.1/bin
+
+Vivado preferences file location: C:/Users/aiai/AppData/Roaming/Xilinx/Vivado/2019.1/vivado.xml
+Vivado preferences directory: C:/Users/aiai/AppData/Roaming/Xilinx/Vivado/2019.1/
+Vivado layouts directory: C:/Users/aiai/AppData/Roaming/Xilinx/Vivado/2019.1/layouts
+PlanAhead jar file location: 	D:/Vivado/install/Vivado/2019.1/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/aiai/Desktop/study/FPGA/Xlinx/2020_12_5/oled_test/oled/vivado.log
+Vivado journal file location: 	C:/Users/aiai/Desktop/study/FPGA/Xlinx/2020_12_5/oled_test/oled/vivado.jou
+Engine tmp dir: 	C:/Users/aiai/Desktop/study/FPGA/Xlinx/2020_12_5/oled_test/oled/.Xil/Vivado-16024-DESKTOP-B6USCLD
+
+Xilinx Environment Variables
+----------------------------
+NO_XILINX_DATA_LICENSE: HIDDEN
+XILINX: D:/Vivado/install/Vivado/2019.1/ids_lite/ISE
+XILINX_DSP: D:/Vivado/install/Vivado/2019.1/ids_lite/ISE
+XILINX_PLANAHEAD: D:/Vivado/install/Vivado/2019.1
+XILINX_SDK: D:/Vivado/install/SDK/2019.1
+XILINX_VIVADO: D:/Vivado/install/Vivado/2019.1
+XILINX_VIVADO_HLS: D:/Vivado/install/Vivado/2019.1
+
+
+GUI allocated memory:	185 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 747 MB
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// TclEventType: PROJECT_OPEN_DIALOG
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// by (cl):  Open Project : addNotify
+// Opening Vivado Project: C:\Users\aiai\Desktop\study\FPGA\Xlinx\2020_12_5\oled_test\oled\oled.xpr. Version: Vivado v2019.1 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 115 MB (+118505kb) [00:00:07]
+// [Engine Memory]: 713 MB (+595884kb) [00:00:07]
+// WARNING: HEventQueue.dispatchEvent() is taking  2136 ms.
+// Tcl Message: open_project C:/Users/aiai/Desktop/study/FPGA/Xlinx/2020_12_5/oled_test/oled/oled.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/aiai/Desktop/study/FPGA/Xlinx/2020_12_5/OLED/ip_repo'. INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Vivado/install/Vivado/2019.1/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 754 MB. GUI used memory: 58 MB. Current time: 12/20/20, 4:26:58 PM CST
+// [Engine Memory]: 754 MB (+5966kb) [00:00:09]
+// Project name: oled; location: C:/Users/aiai/Desktop/study/FPGA/Xlinx/2020_12_5/oled_test/oled; part: xc7z020clg400-2
+dismissDialog("Open Project"); // by (cl)
+// [Engine Memory]: 797 MB (+5702kb) [00:00:13]
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 17 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, IP Integrator, Open Block Design]", 7, false); // u (O, cl)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_BLOCK_DESIGN
+// by (cl):  Open Block Design : addNotify
+// TclEventType: LOAD_FEATURE
+// Tcl Message: open_bd_design {C:/Users/aiai/Desktop/study/FPGA/Xlinx/2020_12_5/oled_test/oled/oled.srcs/sources_1/bd/design_1/design_1.bd} 
+// TclEventType: RSB_CHANGE_CURRENT_DIAGRAM
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: LOAD_FEATURE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_OPEN_DIAGRAM
+// Tcl Message: Adding component instance block -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0 Adding component instance block -- xilinx.com:ip:axi_interconnect:2.1 - ps7_0_axi_periph Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - rst_ps7_0_50M Adding component instance block -- xilinx.com:user:LED:1.0 - LED_0 Successfully read diagram <design_1> from BD file <C:/Users/aiai/Desktop/study/FPGA/Xlinx/2020_12_5/oled_test/oled/oled.srcs/sources_1/bd/design_1/design_1.bd> 
+// TclEventType: RSB_OPEN_DIAGRAM
+// [Engine Memory]: 843 MB (+5659kb) [00:00:29]
+// WARNING: HEventQueue.dispatchEvent() is taking  1375 ms.
+// TclEventType: RSB_CONNECTION_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 843 MB. GUI used memory: 65 MB. Current time: 12/20/20, 4:27:19 PM CST
+// TclEventType: RSB_CONNECTION_CHANGE
+// TclEventType: RSB_LOCK_CHANGE
+dismissDialog("Open Block Design"); // by (cl)
+// Run Command: PAResourceCommand.PACommandNames_CUSTOMIZE_RSB_BLOC
+// O (cl):  Re-customize IP : addNotify
+// r (cl): Re-customize IP: addNotify
+// cl (r): Configuration Presets: addNotify
+// [Engine Memory]: 886 MB (+1003kb) [00:00:34]
+// [GUI Memory]: 122 MB (+684kb) [00:00:35]
+dismissDialog("Re-customize IP"); // O (cl)
+selectButton("Peripheral I/O Pins", "Peripheral I/O Pins"); // k (ch, r)
+selectTreeTable(PAResourceItoN.MIOTablePagePanel_MIO_TABLE, (String) null, 22, (String) null, 0, true); // bt (O, r) - Node
+expandTreeTable(PAResourceItoN.MIOTablePagePanel_MIO_TABLE, (String) null, 22); // bt (O, r)
+selectTreeTable(PAResourceItoN.MIOTablePagePanel_MIO_TABLE, (String) null, 22, (String) null, 0, true); // bt (O, r) - Node
+selectButton("1", "1"); // aH (bt, r)
+selectButton("1", "1"); // aH (bt, r)
+collapseTreeTable(PAResourceItoN.MIOTablePagePanel_MIO_TABLE, (String) null, 22); // bt (O, r)
+selectButton("0", "0"); // aH (bt, r)
+selectButton("0", "0"); // aH (bt, r)
+selectButton("0", "0"); // aH (bt, r)
+selectTreeTable(PAResourceItoN.MIOTablePagePanel_MIO_TABLE, (String) null, 22, (String) null, 0, true); // bt (O, r) - Node
+selectButton("0", "0"); // aH (bt, r)
+// HMemoryUtils.trashcanNow. Engine heap size: 908 MB. GUI used memory: 99 MB. Current time: 12/20/20, 4:28:03 PM CST
+selectButton("0", "0"); // aH (bt, r)
+selectTreeTable(PAResourceItoN.MIOTablePagePanel_MIO_TABLE, (String) null, 23, (String) null, 0, false); // bt (O, r)
+selectButton("PS-PL Configuration", "PS-PL Configuration"); // k (ch, r)
+selectButton("MIO Configuration", "MIO Configuration"); // k (ch, r)
+expandTreeTable(PAResourceItoN.MIOConfigTreeTablePanel_MIO_CONFIG_TREE_TABLE, "I/O Peripherals ; I/O Peripherals ; I/O Peripherals ; I/O Peripherals ; I/O Peripherals ; I/O Peripherals ; I/O Peripherals ; I/O Peripherals", 1); // aW (O, r)
+expandTreeTable(PAResourceItoN.MIOConfigTreeTablePanel_MIO_CONFIG_TREE_TABLE, "GPIO ; GPIO ; GPIO ; GPIO ; GPIO ; GPIO ; GPIO ; GPIO", 16); // aW (O, r)
+selectTreeTable(PAResourceItoN.MIOConfigTreeTablePanel_MIO_CONFIG_TREE_TABLE, "GPIO MIO ; MIO ;  ;  ;  ;  ;  ; ", 17, "MIO", 1, true); // aW (O, r) - Node
+selectTreeTable(PAResourceItoN.MIOConfigTreeTablePanel_MIO_CONFIG_TREE_TABLE, "EMIO GPIO (Width) ; 64 ;  ;  ;  ;  ;  ; ", 18, "64", 1, false); // aW (O, r)
+// [GUI Memory]: 139 MB (+12079kb) [00:01:35]
+// [Engine Memory]: 983 MB (+55833kb) [00:01:35]
+selectComboBox("PCW GPIO EMIO GPIO IO (PCW_GPIO_EMIO_GPIO_IO)", "2", 1); // E (aW, r)
+selectButton("Peripheral I/O Pins", "Peripheral I/O Pins"); // k (ch, r)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (r)
+dismissDialog("Re-customize IP"); // r (cl)
+// Tcl Command: 'set_property -dict [list CONFIG.PCW_GPIO_MIO_GPIO_ENABLE {1} CONFIG.PCW_GPIO_MIO_GPIO_IO {MIO} CONFIG.PCW_GPIO_EMIO_GPIO_ENABLE {1} CONFIG.PCW_GPIO_EMIO_GPIO_IO {2}] [get_bd_cells processing_system7_0]'
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// r (cl): Re-customize IP: addNotify
+// by (r):  Customize IP : addNotify
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// [GUI Memory]: 155 MB (+9164kb) [00:01:51]
+// Tcl Message: startgroup 
+// Tcl Message: set_property -dict [list CONFIG.PCW_GPIO_MIO_GPIO_ENABLE {1} CONFIG.PCW_GPIO_MIO_GPIO_IO {MIO} CONFIG.PCW_GPIO_EMIO_GPIO_ENABLE {1} CONFIG.PCW_GPIO_EMIO_GPIO_IO {2}] [get_bd_cells processing_system7_0] 
+// Tcl Message: endgroup 
+dismissDialog("Customize IP"); // by (r)
+// [GUI Memory]: 170 MB (+7480kb) [00:01:51]
+// Run Command: PAResourceCommand.PACommandNames_AUTO_CONNECT_PORTS
+// TclEventType: RSB_SCRIPT_TASK
+// Tcl Message: startgroup 
+// Tcl Message: make_bd_intf_pins_external  [get_bd_intf_pins processing_system7_0/GPIO_0] 
+// Tcl Message: endgroup 
+// Elapsed time: 24 seconds
+selectButton(PAResourceCommand.PACommandNames_REGENERATE_LAYOUT, "System_regenerate_rsb_layout"); // B (f, cl)
+// Run Command: PAResourceCommand.PACommandNames_REGENERATE_LAYOUT
+// Tcl Command: 'regenerate_bd_layout'
+// TclEventType: RSB_LAYOUT_STATE
+// TclEventType: RSB_REGENERATE_LAYOUT
+// Tcl Message: regenerate_bd_layout 
+selectButton(PAResourceCommand.PACommandNames_VALIDATE_RSB_DESIGN, "System_validate_bd_design_rsb"); // B (f, cl)
+// Run Command: PAResourceCommand.PACommandNames_VALIDATE_RSB_DESIGN
+// Tcl Command: 'validate_bd_design'
+// TclEventType: RSB_PARAM_PROP
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// Tcl Message: validate_bd_design 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_PARAM_PROP
+// by (cl):  Validate Design : addNotify
+dismissDialog("Validate Design"); // by (cl)
+selectButton("OptionPane.button", "OK"); // JButton (A, G)
+selectButton(PAResourceCommand.PACommandNames_VALIDATE_RSB_DESIGN, "System_validate_bd_design_rsb"); // B (f, cl)
+// Run Command: PAResourceCommand.PACommandNames_VALIDATE_RSB_DESIGN
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 1); // k (j, cl)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "IP Catalog", 0); // k (j, cl)
+selectTab((HResource) null, (HResource) null, "Sources", 0); // aK (aH, cl)
+closeView(PAResourceOtoP.PAViews_IP_CATALOG, "IP Catalog"); // W
+// PAResourceOtoP.PAViews_PROJECT_SUMMARY: Project Summary: close view
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, design_1_wrapper (design_1_wrapper.v)]", 1, true); // B (F, cl) - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, design_1_wrapper (design_1_wrapper.v)]", 1); // B (F, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, design_1_wrapper (design_1_wrapper.v), design_1_i : design_1 (design_1.bd)]", 2, true); // B (F, cl) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, design_1_wrapper (design_1_wrapper.v), design_1_i : design_1 (design_1.bd)]", 2, true, false, false, false, true, false); // B (F, cl) - Popup Trigger - Node
+// HMemoryUtils.trashcanNow. Engine heap size: 996 MB. GUI used memory: 112 MB. Current time: 12/20/20, 4:29:38 PM CST
+selectMenuItem(PAResourceCommand.PACommandNames_GENERATE_COMPOSITE_FILE, "Generate Output Products..."); // ah (an, Popup.HeavyWeightWindow)
+// Run Command: PAResourceCommand.PACommandNames_GENERATE_COMPOSITE_FILE
+// aI (cl): Generate Output Products: addNotify
+selectButton(PAResourceQtoS.SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY, "Generate"); // a (aI)
+// by (cl):  Managing Output Products : addNotify
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// Tcl Message: generate_target all [get_files  C:/Users/aiai/Desktop/study/FPGA/Xlinx/2020_12_5/oled_test/oled/oled.srcs/sources_1/bd/design_1/design_1.bd] 
+// Tcl Message: INFO: [BD 41-1662] The design 'design_1.bd' is already validated. Therefore parameter propagation will not be re-run. 
+// Tcl Message: Wrote  : <C:\Users\aiai\Desktop\study\FPGA\Xlinx\2020_12_5\oled_test\oled\oled.srcs\sources_1\bd\design_1\design_1.bd>  Wrote  : <C:/Users/aiai/Desktop/study/FPGA/Xlinx/2020_12_5/oled_test/oled/oled.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui>  
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: RSB_SCRIPT_TASK
+// [Engine Memory]: 1,087 MB (+56895kb) [00:02:52]
+// Tcl Message: VHDL Output written to : C:/Users/aiai/Desktop/study/FPGA/Xlinx/2020_12_5/oled_test/oled/oled.srcs/sources_1/bd/design_1/synth/design_1.v VHDL Output written to : C:/Users/aiai/Desktop/study/FPGA/Xlinx/2020_12_5/oled_test/oled/oled.srcs/sources_1/bd/design_1/sim/design_1.v VHDL Output written to : C:/Users/aiai/Desktop/study/FPGA/Xlinx/2020_12_5/oled_test/oled/oled.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v 
+// [Engine Memory]: 1,160 MB (+19765kb) [00:03:00]
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 . INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_50M . INFO: [BD 41-1029] Generation completed for the IP Integrator block LED_0 . 
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/s00_couplers/auto_pc . 
+// Tcl Message: Exporting to file C:/Users/aiai/Desktop/study/FPGA/Xlinx/2020_12_5/oled_test/oled/oled.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh Generated Block Design Tcl file C:/Users/aiai/Desktop/study/FPGA/Xlinx/2020_12_5/oled_test/oled/oled.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl Generated Hardware Definition File C:/Users/aiai/Desktop/study/FPGA/Xlinx/2020_12_5/oled_test/oled/oled.srcs/sources_1/bd/design_1/synth/design_1.hwdef 
+// Tcl Message: generate_target: Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1196.195 ; gain = 156.566 
+// Tcl Message: catch { config_ip_cache -export [get_ips -all design_1_processing_system7_0_0] } 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: catch { config_ip_cache -export [get_ips -all design_1_auto_pc_0] } 
+// TclEventType: OOC_IP_CACHE_USED
+// Tcl Message: INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_auto_pc_0, cache-ID = 8c69099af28ebbe5; cache size = 2.225 MB. 
+// TclEventType: PROJ_DESIGN_MODE_SET
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJ_DESIGN_MODE_SET
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJ_DESIGN_MODE_SET
+// Tcl Message: export_ip_user_files -of_objects [get_files C:/Users/aiai/Desktop/study/FPGA/Xlinx/2020_12_5/oled_test/oled/oled.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// Tcl Message: create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/aiai/Desktop/study/FPGA/Xlinx/2020_12_5/oled_test/oled/oled.srcs/sources_1/bd/design_1/design_1.bd] 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs -jobs 6 design_1_processing_system7_0_0_synth_1 
+// Tcl Message: [Sun Dec 20 16:29:58 2020] Launched design_1_processing_system7_0_0_synth_1... Run output will be captured here: C:/Users/aiai/Desktop/study/FPGA/Xlinx/2020_12_5/oled_test/oled/oled.runs/design_1_processing_system7_0_0_synth_1/runme.log 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// 'bo' command handler elapsed time: 29 seconds
+// Elapsed time: 28 seconds
+selectButton("OptionPane.button", "OK"); // JButton (A, G)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// HMemoryUtils.trashcanNow. Engine heap size: 1,170 MB. GUI used memory: 122 MB. Current time: 12/20/20, 4:30:38 PM CST
+// Elapsed time: 31 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, design_1_wrapper (design_1_wrapper.v), design_1_i : design_1 (design_1.bd)]", 2, true); // B (F, cl) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, design_1_wrapper (design_1_wrapper.v), design_1_i : design_1 (design_1.bd)]", 2, true, false, false, false, true, false); // B (F, cl) - Popup Trigger - Node
+selectMenuItem(PAResourceCommand.PACommandNames_CREATE_TOP_HDL, "Create HDL Wrapper..."); // ah (an, Popup.HeavyWeightWindow)
+// Run Command: PAResourceCommand.PACommandNames_CREATE_TOP_HDL
+// a (cl): Create HDL Wrapper: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (a)
+dismissDialog("Create HDL Wrapper"); // a (cl)
+// Tcl Message: make_wrapper -files [get_files C:/Users/aiai/Desktop/study/FPGA/Xlinx/2020_12_5/oled_test/oled/oled.srcs/sources_1/bd/design_1/design_1.bd] -top 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, design_1_wrapper (design_1_wrapper.v)]", 1, true); // B (F, cl) - Node
+// [GUI Memory]: 179 MB (+379kb) [00:04:01]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, design_1_wrapper (design_1_wrapper.v)]", 1, true, false, false, false, false, true); // B (F, cl) - Double Click - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, design_1_wrapper (design_1_wrapper.v)]", 1, true); // B (F, cl) - Node
+selectCodeEditor("design_1_wrapper.v", 327, 174); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 272, 261); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 321, 285); // cl (w, cl)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Address Editor", 1); // k (j, cl)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "System", 0); // k (j, cl)
+selectTab((HResource) null, (HResource) null, "Signals", 2); // aK (aH, cl)
+selectTab((HResource) null, (HResource) null, "Design", 1); // aK (aH, cl)
+selectTab((HResource) null, (HResource) null, "Sources", 0); // aK (aH, cl)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "design_1_wrapper.v", 2); // k (j, cl)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "System", 0); // k (j, cl)
+// Elapsed time: 16 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "design_1_wrapper.v", 2); // k (j, cl)
+selectCodeEditor("design_1_wrapper.v", 307, 328); // cl (w, cl)
+// Elapsed time: 17 seconds
+selectCodeEditor("design_1_wrapper.v", 270, 337); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 301, 283); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 313, 263); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 295, 245); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 288, 252); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 274, 267); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 238, 247); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 251, 268); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 239, 284); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 249, 265); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 248, 249); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 248, 259); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 248, 277); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 248, 263); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 248, 249); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 248, 265); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 249, 276); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 251, 254); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 252, 241); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 257, 258); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 257, 278); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 260, 257); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 259, 241); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 259, 252); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 259, 275); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 259, 276, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("design_1_wrapper.v", 261, 269); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 259, 257); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 260, 269); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 260, 247); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 260, 258); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 260, 273); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 260, 263); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 261, 251); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 261, 260); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 263, 276); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 264, 259); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 267, 255); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 260, 246); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 258, 260); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 255, 278); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 248, 251); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 250, 258); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 250, 269); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 241, 244); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 246, 263); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 246, 291); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 238, 248); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 241, 266); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 239, 279); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 239, 254); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 242, 267); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 241, 248); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 240, 263); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 240, 283); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 237, 251); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 238, 269); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 241, 285); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 227, 245); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 251, 283); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 250, 276); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 250, 256); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 246, 244); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 242, 247); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 246, 243); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 246, 263); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 247, 282); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 244, 249); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 244, 264); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 245, 284); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 249, 259); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 246, 237); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 244, 268); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 242, 286); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 240, 259); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 246, 243); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 249, 261); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 250, 277); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 250, 261); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 253, 242); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 251, 246, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("design_1_wrapper.v", 248, 266); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 247, 274); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 248, 262); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 241, 245); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 237, 264); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 238, 275); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 237, 264); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 236, 241); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 238, 259); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 242, 283); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 242, 259); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 241, 235); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 235, 261); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 240, 274); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 234, 308); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 238, 263); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 241, 241); // cl (w, cl)
+// Elapsed time: 69 seconds
+selectCodeEditor("design_1_wrapper.v", 348, 155); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 326, 229); // cl (w, cl)
+// Elapsed time: 200 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "System", 0); // k (j, cl)
+// Run Command: PAResourceCommand.PACommandNames_CUSTOMIZE_RSB_BLOC
+// O (cl):  Re-customize IP : addNotify
+// r (cl): Re-customize IP: addNotify
+// cl (r): Configuration Presets: addNotify
+dismissDialog("Re-customize IP"); // O (cl)
+selectButton("Peripheral I/O Pins", "Peripheral I/O Pins"); // k (ch, r)
+selectButton("MIO Configuration", "MIO Configuration"); // k (ch, r)
+expandTreeTable(PAResourceItoN.MIOConfigTreeTablePanel_MIO_CONFIG_TREE_TABLE, "I/O Peripherals ; I/O Peripherals ; I/O Peripherals ; I/O Peripherals ; I/O Peripherals ; I/O Peripherals ; I/O Peripherals ; I/O Peripherals", 1); // aW (O, r)
+expandTreeTable(PAResourceItoN.MIOConfigTreeTablePanel_MIO_CONFIG_TREE_TABLE, "GPIO ; GPIO ; GPIO ; GPIO ; GPIO ; GPIO ; GPIO ; GPIO", 16); // aW (O, r)
+selectTreeTable(PAResourceItoN.MIOConfigTreeTablePanel_MIO_CONFIG_TREE_TABLE, "EMIO GPIO (Width) ; 2 ;  ;  ;  ;  ;  ; ", 18, "2", 1, false); // aW (O, r)
+selectTreeTable(PAResourceItoN.MIOConfigTreeTablePanel_MIO_CONFIG_TREE_TABLE, "EMIO GPIO (Width) ; 2 ;  ;  ;  ;  ;  ; ", 18, (String) null, 3, false); // aW (O, r)
+selectTreeTable(PAResourceItoN.MIOConfigTreeTablePanel_MIO_CONFIG_TREE_TABLE, "GPIO MIO ; MIO ;  ;  ;  ;  ;  ; ", 17, "MIO", 1, true); // aW (O, r) - Node
+selectComboBox("PCW GPIO MIO GPIO IO (PCW_GPIO_MIO_GPIO_IO)", "MIO", 0); // E (aW, r)
+expandTreeTable(PAResourceItoN.MIOConfigTreeTablePanel_MIO_CONFIG_TREE_TABLE, "GPIO MIO ; MIO ;  ;  ;  ;  ;  ; ", 17); // aW (O, r)
+// Elapsed time: 12 seconds
+collapseTreeTable(PAResourceItoN.MIOConfigTreeTablePanel_MIO_CONFIG_TREE_TABLE, "GPIO MIO ; MIO ;  ;  ;  ;  ;  ; ", 17); // aW (O, r)
+selectTreeTable(PAResourceItoN.MIOConfigTreeTablePanel_MIO_CONFIG_TREE_TABLE, "GPIO MIO ; MIO ;  ;  ;  ;  ;  ; ", 17, "MIO", 1, true); // aW (O, r) - Node
+expandTreeTable(PAResourceItoN.MIOConfigTreeTablePanel_MIO_CONFIG_TREE_TABLE, "GPIO MIO ; MIO ;  ;  ;  ;  ;  ; ", 17); // aW (O, r)
+collapseTreeTable(PAResourceItoN.MIOConfigTreeTablePanel_MIO_CONFIG_TREE_TABLE, "GPIO MIO ; MIO ;  ;  ;  ;  ;  ; ", 17); // aW (O, r)
+selectTreeTable(PAResourceItoN.MIOConfigTreeTablePanel_MIO_CONFIG_TREE_TABLE, "GPIO MIO ; MIO ;  ;  ;  ;  ;  ; ", 17, (String) null, 4, true); // aW (O, r) - Node
+// [GUI Memory]: 219 MB (+32164kb) [00:11:55]
+// Elapsed time: 1285 seconds
+dismissDialog("Re-customize IP"); // r (cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,185 MB. GUI used memory: 162 MB. Current time: 12/20/20, 5:00:38 PM CST
+// Elapsed time: 1236 seconds
+collapseTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Open Implemented Design]", 18); // u (O, cl)
+expandTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Open Implemented Design]", 18); // u (O, cl)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Run Implementation]", 17, false); // u (O, cl)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// A (cl): Synthesis is Out-of-date: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// by (cl):  Resetting Runs : addNotify
+dismissDialog("Synthesis is Out-of-date"); // A (cl)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// f (cl): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// by (cl):  Starting Design Runs : addNotify
+dismissDialog("Launch Runs"); // f (cl)
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -jobs 6 
+// Tcl Message: [Sun Dec 20 17:19:46 2020] Launched synth_1... Run output will be captured here: C:/Users/aiai/Desktop/study/FPGA/Xlinx/2020_12_5/oled_test/oled/oled.runs/synth_1/runme.log [Sun Dec 20 17:19:46 2020] Launched impl_1... Run output will be captured here: C:/Users/aiai/Desktop/study/FPGA/Xlinx/2020_12_5/oled_test/oled/oled.runs/impl_1/runme.log 
+dismissDialog("Starting Design Runs"); // by (cl)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// ah (cl): Implementation Completed: addNotify
+// Elapsed time: 93 seconds
+dismissDialog("Implementation Completed"); // ah (cl)
+// Elapsed time: 295 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "design_1_wrapper.v", 2); // k (j, cl)
+selectCodeEditor("design_1_wrapper.v", 451, 70); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 294, 247); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 144, 424); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 543, 222); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 173, 77); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 173, 77, false, false, false, false, true); // cl (w, cl) - Double Click
+// Elapsed time: 18 seconds
+selectCodeEditor("design_1_wrapper.v", 221, 150); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 135, 221); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 135, 221, false, false, false, false, true); // cl (w, cl) - Double Click
+// Elapsed time: 99 seconds
+selectCodeEditor("design_1_wrapper.v", 367, 216); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 289, 371); // cl (w, cl)
+// Elapsed time: 11 seconds
+selectCodeEditor("design_1_wrapper.v", 528, 53); // cl (w, cl)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 2); // B (F, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, LED.xdc]", 4, false); // B (F, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, LED.xdc]", 4, false, false, false, false, false, true); // B (F, cl) - Double Click
+selectCodeEditor("LED.xdc", 376, 167); // cl (w, cl)
+selectCodeEditor("LED.xdc", 441, 81); // cl (w, cl)
+typeControlKey((HResource) null, "LED.xdc", 'c'); // cl (w, cl)
+selectCodeEditor("LED.xdc", 30, 116); // cl (w, cl)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "design_1_wrapper.v", 2); // k (j, cl)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Address Editor", 1); // k (j, cl)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "System", 0); // k (j, cl)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "LED.xdc", 3); // k (j, cl)
+selectCodeEditor("LED.xdc", 454, 84); // cl (w, cl)
+typeControlKey((HResource) null, "LED.xdc", 'c'); // cl (w, cl)
+selectCodeEditor("LED.xdc", 36, 120); // cl (w, cl)
+typeControlKey((HResource) null, "LED.xdc", 'v'); // cl (w, cl)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "design_1_wrapper.v", 2); // k (j, cl)
+selectCodeEditor("design_1_wrapper.v", 266, 260); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 141, 283); // cl (w, cl)
+selectCodeEditor("design_1_wrapper.v", 141, 283, false, false, false, false, true); // cl (w, cl) - Double Click
+// Elapsed time: 11 seconds
+typeControlKey((HResource) null, "design_1_wrapper.v", 'c'); // cl (w, cl)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "LED.xdc", 3); // k (j, cl)
+selectCodeEditor("LED.xdc", 398, 123); // cl (w, cl)
+selectCodeEditor("LED.xdc", 398, 123, false, false, false, false, true); // cl (w, cl) - Double Click
+typeControlKey((HResource) null, "LED.xdc", 'v'); // cl (w, cl)
+selectCodeEditor("LED.xdc", 403, 146); // cl (w, cl)
+selectCodeEditor("LED.xdc", 403, 146, false, false, false, false, true); // cl (w, cl) - Double Click
+typeControlKey((HResource) null, "LED.xdc", 'v'); // cl (w, cl)
+selectCodeEditor("LED.xdc", 366, 173); // cl (w, cl)
+selectCodeEditor("LED.xdc", 366, 173, false, false, false, false, true); // cl (w, cl) - Double Click
+typeControlKey((HResource) null, "LED.xdc", 'v'); // cl (w, cl)
+selectCodeEditor("LED.xdc", 381, 199); // cl (w, cl)
+selectCodeEditor("LED.xdc", 381, 199, false, false, false, false, true); // cl (w, cl) - Double Click
+typeControlKey((HResource) null, "LED.xdc", 'v'); // cl (w, cl)
+selectCodeEditor("LED.xdc", 538, 191); // cl (w, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,185 MB. GUI used memory: 156 MB. Current time: 12/20/20, 5:30:38 PM CST
+// Elapsed time: 49 seconds
+selectCodeEditor("LED.xdc", 474, 114); // cl (w, cl)
+selectCodeEditor("LED.xdc", 634, 150); // cl (w, cl)
+// Elapsed time: 41 seconds
+selectCodeEditor("LED.xdc", 234, 176); // cl (w, cl)
+// Elapsed time: 17 seconds
+selectCodeEditor("LED.xdc", 218, 194); // cl (w, cl)
+// Elapsed time: 17 seconds
+selectCodeEditor("LED.xdc", 528, 127); // cl (w, cl)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // B (f, cl)
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 30, false); // u (O, cl)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (cl): Synthesis is Out-of-date: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// by (cl):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("Synthesis is Out-of-date"); // A (cl)
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// f (cl): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+dismissDialog("Launch Runs"); // f (cl)
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: FILESET_TARGET_UCF_CHANGE
+// TclEventType: RUN_LAUNCH
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 6 
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sun Dec 20 17:32:14 2020] Launched synth_1... Run output will be captured here: C:/Users/aiai/Desktop/study/FPGA/Xlinx/2020_12_5/oled_test/oled/oled.runs/synth_1/runme.log [Sun Dec 20 17:32:14 2020] Launched impl_1... Run output will be captured here: C:/Users/aiai/Desktop/study/FPGA/Xlinx/2020_12_5/oled_test/oled/oled.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 27 seconds
+selectCodeEditor("LED.xdc", 539, 187); // cl (w, cl)
+selectCodeEditor("LED.xdc", 805, 107); // cl (w, cl)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+selectCodeEditor("LED.xdc", 485, 142); // cl (w, cl)
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,185 MB. GUI used memory: 156 MB. Current time: 12/20/20, 6:00:39 PM CST
+// WARNING: HEventQueue.dispatchEvent() is taking  2221992 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 1,185 MB. GUI used memory: 156 MB. Current time: 12/20/20, 6:46:46 PM CST
+// WARNING: HEventQueue.dispatchEvent() is taking  1882 ms.
+// Elapsed time: 4461 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // Z (q, cl)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // ae (cl)
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // ae (cl)
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // ae (cl)
+selectMenu(PAResourceItoN.MainMenuMgr_TEXT_EDITOR, "Text Editor"); // ae (cl)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // ae (cl)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // ae (cl)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // Z (q, cl)
+selectCodeEditor("LED.xdc", 213, 261); // cl (w, cl)
+// Elapsed time: 39 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // Z (q, cl)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // ae (cl)
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // ae (cl)
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // ae (cl)
+selectMenu(PAResourceItoN.MainMenuMgr_TEXT_EDITOR, "Text Editor"); // ae (cl)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // ae (cl)
+selectMenu(PAResourceItoN.MainMenuMgr_TEXT_EDITOR, "Text Editor"); // ae (cl)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // ae (cl)
+selectMenuItem(PAResourceCommand.PACommandNames_EXPORT_HARDWARE, "Export Hardware..."); // ah (cl)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // Z (q, cl)
+// Run Command: PAResourceCommand.PACommandNames_EXPORT_HARDWARE
+// X (cl): Export Hardware: addNotify
+selectCheckBox(PAResourceItoN.NewExportHardwareDialog_INCLUDE_BITSTREAM, "Include bitstream", true); // g (Q, X): TRUE
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (X)
+dismissDialog("Export Hardware"); // X (cl)
+// Tcl Message: file mkdir C:/Users/aiai/Desktop/study/FPGA/Xlinx/2020_12_5/oled_test/oled/oled.sdk 
+// Tcl Message: file copy -force C:/Users/aiai/Desktop/study/FPGA/Xlinx/2020_12_5/oled_test/oled/oled.runs/impl_1/design_1_wrapper.sysdef C:/Users/aiai/Desktop/study/FPGA/Xlinx/2020_12_5/oled_test/oled/oled.sdk/design_1_wrapper.hdf  
+// Elapsed time: 10 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // Z (q, cl)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // ae (cl)
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // ae (cl)
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // ae (cl)
+selectMenu(PAResourceItoN.MainMenuMgr_TEXT_EDITOR, "Text Editor"); // ae (cl)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // ae (cl)
+selectMenuItem(PAResourceCommand.PACommandNames_LAUNCH_HARDWARE, "Launch SDK"); // ah (cl)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // Z (q, cl)
+// Run Command: PAResourceCommand.PACommandNames_LAUNCH_HARDWARE
+// aa (cl): Launch SDK: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aa)
+dismissDialog("Launch SDK"); // aa (cl)
+// Tcl Message: launch_sdk -workspace C:/Users/aiai/Desktop/study/FPGA/Xlinx/2020_12_5/oled_test/oled/oled.sdk -hwspec C:/Users/aiai/Desktop/study/FPGA/Xlinx/2020_12_5/oled_test/oled/oled.sdk/design_1_wrapper.hdf 
+// Tcl Message: INFO: [Vivado 12-393] Launching SDK... INFO: [Vivado 12-417] Running xsdk -workspace C:/Users/aiai/Desktop/study/FPGA/Xlinx/2020_12_5/oled_test/oled/oled.sdk -hwspec C:/Users/aiai/Desktop/study/FPGA/Xlinx/2020_12_5/oled_test/oled/oled.sdk/design_1_wrapper.hdf INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages. 
+// Elapsed time: 1063 seconds
+selectCodeEditor("LED.xdc", 595, 258); // cl (w, cl)
+selectCodeEditor("LED.xdc", 426, 338); // cl (w, cl)
+selectCodeEditor("LED.xdc", 526, 214); // cl (w, cl)
+selectCodeEditor("LED.xdc", 361, 171); // cl (w, cl)
+selectCodeEditor("LED.xdc", 299, 51); // cl (w, cl)
+selectCodeEditor("LED.xdc", 287, 18); // cl (w, cl)
+selectCodeEditor("LED.xdc", 282, 36); // cl (w, cl)
+selectCodeEditor("LED.xdc", 278, 76); // cl (w, cl)
+selectCodeEditor("LED.xdc", 280, 63); // cl (w, cl)
+selectCodeEditor("LED.xdc", 283, 25); // cl (w, cl)
+selectCodeEditor("LED.xdc", 281, 4); // cl (w, cl)
+selectCodeEditor("LED.xdc", 278, 12); // cl (w, cl)
+selectCodeEditor("LED.xdc", 276, 42); // cl (w, cl)
+selectCodeEditor("LED.xdc", 276, 60); // cl (w, cl)
+selectCodeEditor("LED.xdc", 277, 74); // cl (w, cl)
+selectCodeEditor("LED.xdc", 273, 53); // cl (w, cl)
+selectCodeEditor("LED.xdc", 276, 20); // cl (w, cl)
+selectCodeEditor("LED.xdc", 274, 36); // cl (w, cl)
+selectCodeEditor("LED.xdc", 278, 55); // cl (w, cl)
+selectCodeEditor("LED.xdc", 274, 76); // cl (w, cl)
+selectCodeEditor("LED.xdc", 278, 74); // cl (w, cl)
+selectCodeEditor("LED.xdc", 278, 50); // cl (w, cl)
+selectCodeEditor("LED.xdc", 278, 27); // cl (w, cl)
+selectCodeEditor("LED.xdc", 277, 10); // cl (w, cl)
+selectCodeEditor("LED.xdc", 277, 30); // cl (w, cl)
+selectCodeEditor("LED.xdc", 278, 55); // cl (w, cl)
+selectCodeEditor("LED.xdc", 279, 74); // cl (w, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,185 MB. GUI used memory: 156 MB. Current time: 12/20/20, 7:16:47 PM CST
+// Elapsed time: 2201 seconds
+selectCodeEditor("LED.xdc", 520, 148); // cl (w, cl)
+selectCodeEditor("LED.xdc", 569, 126); // cl (w, cl)
+selectCodeEditor("LED.xdc", 565, 146); // cl (w, cl)
+selectCodeEditor("LED.xdc", 562, 167); // cl (w, cl)
+selectCodeEditor("LED.xdc", 562, 194); // cl (w, cl)
+// Elapsed time: 212 seconds
+selectCodeEditor("LED.xdc", 434, 383); // cl (w, cl)
+selectCodeEditor("LED.xdc", 494, 297); // cl (w, cl)
+selectCodeEditor("LED.xdc", 568, 227); // cl (w, cl)
+selectCodeEditor("LED.xdc", 569, 190); // cl (w, cl)
+selectCodeEditor("LED.xdc", 575, 165); // cl (w, cl)
+selectCodeEditor("LED.xdc", 583, 147); // cl (w, cl)
+selectCodeEditor("LED.xdc", 585, 134); // cl (w, cl)
+selectCodeEditor("LED.xdc", 586, 117); // cl (w, cl)
+selectCodeEditor("LED.xdc", 579, 71); // cl (w, cl)
+selectCodeEditor("LED.xdc", 581, 38); // cl (w, cl)
+selectCodeEditor("LED.xdc", 593, 10); // cl (w, cl)
+selectCodeEditor("LED.xdc", 589, 22); // cl (w, cl)
+selectCodeEditor("LED.xdc", 581, 48); // cl (w, cl)
+selectCodeEditor("LED.xdc", 576, 73); // cl (w, cl)
+selectCodeEditor("LED.xdc", 576, 98); // cl (w, cl)
+selectCodeEditor("LED.xdc", 580, 147); // cl (w, cl)
+selectCodeEditor("LED.xdc", 575, 167); // cl (w, cl)
+selectCodeEditor("LED.xdc", 573, 137); // cl (w, cl)
+selectCodeEditor("LED.xdc", 569, 143); // cl (w, cl)
+selectCodeEditor("LED.xdc", 569, 151); // cl (w, cl)
+selectCodeEditor("LED.xdc", 561, 174); // cl (w, cl)
+selectCodeEditor("LED.xdc", 558, 193); // cl (w, cl)
+selectCodeEditor("LED.xdc", 555, 190); // cl (w, cl)
+selectCodeEditor("LED.xdc", 555, 175); // cl (w, cl)
+selectCodeEditor("LED.xdc", 565, 151); // cl (w, cl)
+selectCodeEditor("LED.xdc", 567, 130); // cl (w, cl)
+selectCodeEditor("LED.xdc", 567, 108); // cl (w, cl)
+selectCodeEditor("LED.xdc", 567, 82); // cl (w, cl)
+selectCodeEditor("LED.xdc", 570, 67); // cl (w, cl)
+selectCodeEditor("LED.xdc", 576, 50); // cl (w, cl)
+selectCodeEditor("LED.xdc", 582, 28); // cl (w, cl)
+selectCodeEditor("LED.xdc", 585, 14); // cl (w, cl)
+selectCodeEditor("LED.xdc", 585, 14); // cl (w, cl)
+selectCodeEditor("LED.xdc", 581, 27); // cl (w, cl)
+selectCodeEditor("LED.xdc", 579, 44); // cl (w, cl)
+selectCodeEditor("LED.xdc", 573, 66); // cl (w, cl)
+selectCodeEditor("LED.xdc", 572, 82); // cl (w, cl)
+selectCodeEditor("LED.xdc", 610, 98); // cl (w, cl)
+selectCodeEditor("LED.xdc", 605, 132); // cl (w, cl)
+selectCodeEditor("LED.xdc", 597, 142); // cl (w, cl)
+selectCodeEditor("LED.xdc", 599, 166); // cl (w, cl)
+selectCodeEditor("LED.xdc", 587, 211); // cl (w, cl)
+selectCodeEditor("LED.xdc", 589, 170); // cl (w, cl)
+selectCodeEditor("LED.xdc", 595, 148); // cl (w, cl)
+selectCodeEditor("LED.xdc", 595, 133); // cl (w, cl)
+selectCodeEditor("LED.xdc", 599, 116); // cl (w, cl)
+selectCodeEditor("LED.xdc", 601, 98); // cl (w, cl)
+selectCodeEditor("LED.xdc", 602, 86); // cl (w, cl)
+selectCodeEditor("LED.xdc", 602, 70); // cl (w, cl)
+selectCodeEditor("LED.xdc", 605, 46); // cl (w, cl)
+selectCodeEditor("LED.xdc", 607, 33); // cl (w, cl)
+selectCodeEditor("LED.xdc", 609, 10); // cl (w, cl)
+selectCodeEditor("LED.xdc", 602, 26); // cl (w, cl)
+selectCodeEditor("LED.xdc", 589, 46); // cl (w, cl)
+selectCodeEditor("LED.xdc", 569, 62); // cl (w, cl)
+selectCodeEditor("LED.xdc", 567, 68); // cl (w, cl)
+selectCodeEditor("LED.xdc", 567, 72); // cl (w, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,185 MB. GUI used memory: 155 MB. Current time: 12/20/20, 7:46:47 PM CST
+// Elapsed time: 157 seconds
+selectCodeEditor("LED.xdc", 554, 55); // cl (w, cl)
+selectCodeEditor("LED.xdc", 560, 82); // cl (w, cl)
+// Elapsed time: 21 seconds
+selectCodeEditor("LED.xdc", 577, 122); // cl (w, cl)
+selectCodeEditor("LED.xdc", 582, 153); // cl (w, cl)
+selectCodeEditor("LED.xdc", 562, 117); // cl (w, cl)
+selectCodeEditor("LED.xdc", 561, 148); // cl (w, cl)
+selectCodeEditor("LED.xdc", 549, 168); // cl (w, cl)
+selectCodeEditor("LED.xdc", 543, 193); // cl (w, cl)
+// Elapsed time: 31 seconds
+selectCodeEditor("LED.xdc", 514, 181); // cl (w, cl)
+selectCodeEditor("LED.xdc", 514, 181); // cl (w, cl)
+selectCodeEditor("LED.xdc", 669, 162); // cl (w, cl)
+selectCodeEditor("LED.xdc", 711, 94); // cl (w, cl)
+selectCodeEditor("LED.xdc", 711, 119); // cl (w, cl)
+selectCodeEditor("LED.xdc", 689, 147); // cl (w, cl)
+selectCodeEditor("LED.xdc", 669, 172); // cl (w, cl)
+selectCodeEditor("LED.xdc", 639, 197); // cl (w, cl)
+selectCodeEditor("LED.xdc", 637, 173); // cl (w, cl)
+selectCodeEditor("LED.xdc", 646, 152); // cl (w, cl)
+selectCodeEditor("LED.xdc", 648, 124); // cl (w, cl)
+selectCodeEditor("LED.xdc", 631, 145); // cl (w, cl)
+selectCodeEditor("LED.xdc", 615, 169); // cl (w, cl)
+selectCodeEditor("LED.xdc", 606, 184); // cl (w, cl)
+selectCodeEditor("LED.xdc", 594, 184); // cl (w, cl)
+selectCodeEditor("LED.xdc", 595, 167); // cl (w, cl)
+selectCodeEditor("LED.xdc", 606, 149); // cl (w, cl)
+selectCodeEditor("LED.xdc", 604, 121); // cl (w, cl)
+selectCodeEditor("LED.xdc", 585, 157); // cl (w, cl)
+selectCodeEditor("LED.xdc", 570, 171); // cl (w, cl)
+selectCodeEditor("LED.xdc", 561, 186); // cl (w, cl)
+selectCodeEditor("LED.xdc", 632, 188); // cl (w, cl)
+selectCodeEditor("LED.xdc", 633, 168); // cl (w, cl)
+selectCodeEditor("LED.xdc", 603, 132); // cl (w, cl)
+selectCodeEditor("LED.xdc", 601, 140); // cl (w, cl)
+selectCodeEditor("LED.xdc", 596, 161); // cl (w, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,185 MB. GUI used memory: 155 MB. Current time: 12/20/20, 8:16:47 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,185 MB. GUI used memory: 155 MB. Current time: 12/20/20, 8:51:30 PM CST
+// WARNING: HEventQueue.dispatchEvent() is taking  1744 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 1,185 MB. GUI used memory: 146 MB. Current time: 12/20/20, 9:21:30 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,185 MB. GUI used memory: 146 MB. Current time: 12/20/20, 9:51:30 PM CST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,185 MB. GUI used memory: 146 MB. Current time: 12/20/20, 10:21:31 PM CST
